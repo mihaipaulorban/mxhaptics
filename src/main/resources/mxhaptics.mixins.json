@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.mxhaptics.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "BlockItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

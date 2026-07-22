@@ -1,0 +1,39 @@
+{
+  "mxhaptics.config.title": "MX Haptics",
+  "mxhaptics.config.category.general": "General",
+
+  "mxhaptics.config.test.keybindHint": "⚡ Test: assign a key to 'Test haptic vibration' under Options > Controls > Key Binds > MX Haptics.",
+  "mxhaptics.config.test.intro": "Otherwise, toggle a 'Test vibration' below and click 'Save Changes' to fire the vibration.",
+  "mxhaptics.config.test.quickButton": "Test vibration",
+  "mxhaptics.config.test.quickButton.click": "Toggle → Save to test",
+  "mxhaptics.config.test.quickButton.tooltip": "Fires a fixed test vibration (pattern 1, intensity 75) when you click Save Changes. The toggle is not persisted.",
+  "mxhaptics.config.test.eventButton": "Test this event's vibration",
+  "mxhaptics.config.test.eventButton.click": "Toggle → Save to test",
+  "mxhaptics.config.test.eventButton.tooltip": "Fires this event's currently edited pattern/intensity when you click Save Changes. The toggle is not persisted.",
+
+  "mxhaptics.config.bridgeUrl": "Haptic bridge URL",
+  "mxhaptics.config.bridgeUrl.tooltip": "WebSocket endpoint of the local Logi Options+ haptic plugin (default: HapticWeb).",
+  "mxhaptics.config.trustAllCertificates": "Trust all TLS certificates",
+  "mxhaptics.config.trustAllCertificates.tooltip": "Only enable this if your local plugin uses a self-signed certificate.",
+
+  "mxhaptics.config.enabled": "Enabled",
+  "mxhaptics.config.pattern": "Vibration pattern (0-15)",
+  "mxhaptics.config.pattern.tooltip": "Index of the haptic waveform sent to the plugin. See the HapticWeb playground for what each pattern feels like.",
+  "mxhaptics.config.intensity": "Intensity",
+  "mxhaptics.config.intensity.tooltip": "0-100. Sent as an optional second byte; plugins that don't support it ignore it.",
+  "mxhaptics.config.cooldownMs": "Cooldown (ms)",
+  "mxhaptics.config.cooldownMs.tooltip": "Minimum time between two triggers of this event, to avoid continuous vibration.",
+
+  "mxhaptics.event.damage": "Damage taken",
+  "mxhaptics.event.blockBreak": "Block broken",
+  "mxhaptics.event.airBubble": "Air bubble popped",
+  "mxhaptics.event.blockPlace": "Block placed",
+  "mxhaptics.event.shieldBlock": "Shield block",
+  "mxhaptics.event.hotbarChange": "Hotbar slot change",
+
+  "mxhaptics.command.test.fired": "Test vibration sent (pattern %s, intensity %s).",
+  "mxhaptics.command.test.notconnected": "Haptic bridge not connected. Is Logi Options+ running with HapticWeb installed?",
+
+  "key.mxhaptics.test": "Test haptic vibration",
+  "key.categories.mxhaptics.controls": "MX Haptics"
+}

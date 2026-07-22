@@ -1,0 +1,72 @@
+plugins {
+    // Dalla 26.1 in poi Minecraft non è più offuscato: il plugin si chiama
+    // "net.fabricmc.fabric-loom" (non più "fabric-loom").
+    id 'net.fabricmc.fabric-loom' version '1.17-SNAPSHOT'
+}
+
+version = project.mod_version
+group = project.maven_group
+
+base {
+    archivesName = project.archives_base_name
+}
+
+repositories {
+    // Cloth Config e Mod Menu non hanno ancora una release Maven ufficiale
+    // per Minecraft 26.2 sui rispettivi maven (shedaniel.me / terraformersmc.com),
+    // quindi le scarichiamo dal Maven proxy di Modrinth, che le ha sicuramente.
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'Modrinth'
+                url = 'https://api.modrinth.com/maven'
+            }
+        }
+        filter {
+            includeGroup 'maven.modrinth'
+        }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    // NIENTE riga "mappings": da Minecraft 26.1 in poi il gioco è unobfuscated,
+    // quindi non esistono più mappings Mojang/Yarn da scaricare.
+
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+
+    // Dipendenze OPZIONALI: servono solo a compilare la schermata di config.
+    // A runtime la mod funziona anche senza (fallback su mxhaptics.json).
+    compileOnly "maven.modrinth:${project.cloth_config_modrinth_project}:${project.cloth_config_modrinth_version}"
+    compileOnly "maven.modrinth:${project.modmenu_modrinth_project}:${project.modmenu_modrinth_version}"
+
+    // Decommenta per averle anche nell'ambiente di sviluppo (runClient):
+    // localRuntime "maven.modrinth:${project.cloth_config_modrinth_project}:${project.cloth_config_modrinth_version}"
+    // localRuntime "maven.modrinth:${project.modmenu_modrinth_project}:${project.modmenu_modrinth_version}"
+}
+
+processResources {
+    inputs.property 'version', project.version
+
+    filesMatching('fabric.mod.json') {
+        expand 'version': project.version
+    }
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 25
+}
+
+jar {
+    from('LICENSE') {
+        rename { "${it}_${project.archives_base_name}" }
+    }
+}
