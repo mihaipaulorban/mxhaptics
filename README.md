@@ -6,7 +6,7 @@ plugin of the **Logi Options+** Actions SDK.
 
 Free, open source (MIT), no accounts, no in-app purchases. Runs the same on
 Windows and macOS: only standard Java networking, no native code. Works on any
-server, including vanilla — everything happens client-side.
+server, including vanilla, everything happens client-side.
 
 ## Supported events
 
@@ -123,12 +123,12 @@ lines in `build.gradle` if you want Cloth Config and Mod Menu in dev too).
   and fully async sends. **No network call ever runs on the game thread.**
 - `HapticManager` — single trigger entry point: applies enabled/cooldown per
   event, forwards to the bridge.
-- `TickObservers` — at the end of each client tick detects damage taken
+- `TickObservers` at the end of each client tick detects damage taken
   (health drop), air bubbles (bubble-icon drop), hotbar change (selected slot
   change) and shield block (shield item durability increase while blocking —
   works for melee and projectiles, including arrows).
 - `BlockItemMixin` — client-side mixin on `BlockItem#place` for block placement.
-- Fabric API event `ClientPlayerBlockBreakEvents.AFTER` — for block breaks.
+- Fabric API event `ClientPlayerBlockBreakEvents.AFTER` for block breaks.
 
 ## Wire protocol
 
