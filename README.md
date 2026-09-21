@@ -101,6 +101,10 @@ Cooldown). Saving reconnects the bridge with the new settings.
 - The file is read at game launch; if you edit it by hand, restart the game
   (or save once from the GUI, which reloads the connection).
 
+##Delayed vibrations when the mouse is idle
+
+If you keep the mouse completely still (for example while waiting underwater for air bubbles), some vibrations may arrive late, sometimes by a second or two. This is not caused by the mod: when the MX Master 4 isn't being moved it enters a low power state, and the wireless connection receives the haptic command with a delay. Events that happen while you're using the mouse, like scrolling through the hotbar, feel instant for the same reason. Logi Options+ doesn't currently offer a setting to change this, but moving the mouse slightly or using the Logi Bolt receiver instead of Bluetooth can help.
+
 ## Build from source
 
 Requires **JDK 25**. Gradle wrapper is included, so no separate Gradle install
