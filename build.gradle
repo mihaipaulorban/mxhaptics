@@ -11,9 +11,15 @@ base {
     archivesName = project.archives_base_name
 }
 
+// Nome del jar con anche la versione di Minecraft, es. mxhaptics-1.3.0+mc26.3.jar.
+// La versione della mod (fabric.mod.json, Mod Menu) resta solo mod_version.
+tasks.withType(AbstractArchiveTask).configureEach {
+    archiveVersion = "${project.mod_version}+mc${project.minecraft_version}"
+}
+
 repositories {
     // Cloth Config e Mod Menu non hanno ancora una release Maven ufficiale
-    // per Minecraft 26.2 sui rispettivi maven (shedaniel.me / terraformersmc.com),
+    // per Minecraft 26.3 sui rispettivi maven (shedaniel.me / terraformersmc.com),
     // quindi le scarichiamo dal Maven proxy di Modrinth, che le ha sicuramente.
     exclusiveContent {
         forRepository {

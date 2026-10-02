@@ -1,6 +1,6 @@
 # MX Haptics
 
-Client-side Fabric mod for **Minecraft Java Edition 26.2** that sends haptic
+Client-side Fabric mod for **Minecraft Java Edition 26.3** that sends haptic
 feedback to the **Logitech MX Master 4** mouse while you play, through a local
 plugin of the **Logi Options+** Actions SDK.
 
@@ -33,9 +33,9 @@ Each event is independently configurable: on/off, pattern (0–15), intensity
 
 **To play:**
 
-- Minecraft Java Edition **26.2**
-- **Fabric Loader ≥ 0.19.3** and **Fabric API 0.155.2+26.2** (or a version
-  compatible with 26.2)
+- Minecraft Java Edition **26.3**
+- **Fabric Loader ≥ 0.19.5** and **Fabric API 0.161.0+26.3** (or a version
+  compatible with 26.3)
 - **Java 25**
 
 **Optional** (for the in-game config screen):
@@ -48,8 +48,8 @@ automatically on first launch with all fields ready to edit).
 
 ## Installation
 
-1. Install Fabric Loader for Minecraft 26.2 (see fabricmc.net).
-2. Drop these into `mods/`: **Fabric API**, `mxhaptics-1.2.0.jar`, and — if you
+1. Install Fabric Loader for Minecraft 26.3 (see fabricmc.net).
+2. Drop these into `mods/`: **Fabric API**, `mxhaptics-1.3.0+mc26.3.jar`, and — if you
    want the config screen — **Cloth Config** and **Mod Menu**.
 3. Start Logi Options+ with HapticWeb enabled, then launch the game.
 4. In the game log you'll see `haptic bridge connesso a wss://…`. If the plugin
@@ -115,7 +115,7 @@ needed.
 # Windows: gradlew.bat build
 ```
 
-The output jar is `build/libs/mxhaptics-1.2.0.jar`.
+The output jar is `build/libs/mxhaptics-1.3.0+mc26.3.jar`.
 
 For the dev environment: `./gradlew runClient` (uncomment the `localRuntime`
 lines in `build.gradle` if you want Cloth Config and Mod Menu in dev too).

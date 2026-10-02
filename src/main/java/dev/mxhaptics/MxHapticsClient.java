@@ -49,7 +49,7 @@ public class MxHapticsClient implements ClientModInitializer {
                 Identifier.fromNamespaceAndPath(MOD_ID, "controls"));
         testKey = KeyMappingHelper.registerKeyMapping(new KeyMapping(
                 "key.mxhaptics.test",
-                InputConstants.Type.KEYSYM,
+                InputConstants.Type.KEYBOARD,
                 InputConstants.UNKNOWN.getValue(),
                 category));
 
